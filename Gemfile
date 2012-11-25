@@ -48,3 +48,6 @@ gem 'jquery-rails'
 gem "mocha", :group => :test
 
 gem 'devise'
+
+gem 'unicorn'
+gem 'capistrano'
