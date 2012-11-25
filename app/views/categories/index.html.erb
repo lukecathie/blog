@@ -1,0 +1,16 @@
+<% title "Categories" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for category in @categories %>
+    <tr>
+      <td><%= category.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% if user_signed_in? %>
+  <p><%= link_to "New Category", new_category_path %></p>
+<% end %>

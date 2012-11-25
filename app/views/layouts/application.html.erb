@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Luke Cathie - Web Developer</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>  
+  <link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
+
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag :application %>
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Buenard' rel='stylesheet' type='text/css'>
+</head>
+
+<body id="home">
+  <div id="header">
+    <div class="container">
+      <div class="row">
+        <p class="logo"><a href="/">Luke Cathie</a></p>
+        <ul class="navigation">
+          <!-- <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li> -->
+          <li><a href="/"><i class="icon icon-home"></i></a></li>
+          <li><a href="/">Blog</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="content">
+    <div class="container">
+      <div class="row">
+        <div class="span10 offset1">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          <% end %>
+          <%= content_tag :h1, yield(:title) if show_title? %>
+          <%= yield %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+
+    <div class="container">
+      <div class="row">
+        <div class="span2">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/">About Alfaroa</a></li>
+            <li><a href="/">Jobs</a></li>
+            <li><a href="/">Press Resources</a></li>
+            <li><a href="/">Press Releases</a></li>
+          </ul>
+        </div>
+        <div class="span4">
+          <h3>Sites I find useful ...</h3>
+          <div class="row">
+            <div class="span2">
+              <ul>
+                <li><a href="/">The Ruby Toolbox</a></li>
+                <li><a href="/">Railscasts</a></li>
+                <li><a href="/">Peepcode</a></li>
+                <li><a href="/">Google Web Fonts</a></li>
+              </ul>
+            </div>
+            <div class="span2">
+              <ul>
+                <li><a href="/">Twitter Bootstrap</a></li>
+                <li><a href="/">Dribbble</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="span2">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="/">Contact Alfaroa</a></li>
+          </ul>
+        </div>
+        <div class="span4">
+          <h3>Support</h3>
+          <p>Quisque pellentesque tincidunt pellentesque. Integer malesuada ligula ac lorem commodo varius. Vivamus non tristique urna. Nam eu massa ut lacus imperdiet gravida. Nullam at leo.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
